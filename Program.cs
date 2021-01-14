@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RSSFeedAgeCheck
 {
@@ -7,6 +8,14 @@ namespace RSSFeedAgeCheck
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static List<string> GetStaleCompanies(Dictionary<string, List<string>> companyFeedDictionary, int daysUntilStale)
+        {
+
         }
     }
 }
