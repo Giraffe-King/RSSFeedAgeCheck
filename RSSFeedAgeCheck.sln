@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedAgeCheck", "RSSFeedAgeCheck.csproj", "{C5CF4617-1CE0-4DF7-A164-0C3001D3DC86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSSFeedAgeCheck", "RSSFeedAgeCheck.csproj", "{C5CF4617-1CE0-4DF7-A164-0C3001D3DC86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSSFeedAgeCheckTests", "..\RSSFeedAgeCheckTests\RSSFeedAgeCheckTests.csproj", "{FE1E8017-FE6E-4A8F-86E5-719CFD085730}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C5CF4617-1CE0-4DF7-A164-0C3001D3DC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5CF4617-1CE0-4DF7-A164-0C3001D3DC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5CF4617-1CE0-4DF7-A164-0C3001D3DC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1E8017-FE6E-4A8F-86E5-719CFD085730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1E8017-FE6E-4A8F-86E5-719CFD085730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1E8017-FE6E-4A8F-86E5-719CFD085730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1E8017-FE6E-4A8F-86E5-719CFD085730}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

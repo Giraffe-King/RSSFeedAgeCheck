@@ -5,9 +5,14 @@ using CodeHollow.FeedReader;
 
 namespace RSSFeedAgeCheck
 {
-    class Program
+    public class Program : IProgram
     {
         static void Main(string[] args)
+        {
+            new Program().Run();
+        }
+
+        public void Run()
         {
             Dictionary<string, List<string>> testDictionary = new Dictionary<string, List<string>>();
 
@@ -35,7 +40,7 @@ namespace RSSFeedAgeCheck
         /// <summary>
         /// 
         /// </summary>
-        static List<string> GetStaleCompanies(Dictionary<string, List<string>> companyFeedDictionary, int daysUntilStale)
+        public List<string> GetStaleCompanies(Dictionary<string, List<string>> companyFeedDictionary, int daysUntilStale)
         {
             return companyFeedDictionary
                     .Select(x => x.Key)
@@ -43,19 +48,28 @@ namespace RSSFeedAgeCheck
                     .ToList();
         }
 
-        static bool IsCompanyStale(string company, List<string> feeds, int daysUntilStale)
+        public bool IsCompanyStale(string company, List<string> feeds, int daysUntilStale)
         {
             return feeds.All(x => IsFeedStale(x, daysUntilStale));
         }
 
-        static bool IsFeedStale(string feed, int daysUntilStale)
+        public bool IsFeedStale(string feed, int daysUntilStale)
         {
-            var rss = FeedReader.ReadAsync(feed).Result;
+            var rss = ReadFeed(feed);
+            if (rss.Items.Count <= 0)
+            {
+                return true;
+            }
             var mostRecent = rss.Items.Max(x => x.PublishingDate).Value.Date;
             var today = DateTime.Now.Date;
             var dateDiff = today - mostRecent;
 
             return dateDiff.Days > daysUntilStale;
+        }
+
+        public virtual Feed ReadFeed(string feed)
+        {
+            return FeedReader.ReadAsync(feed).Result;
         }
     }
 }
